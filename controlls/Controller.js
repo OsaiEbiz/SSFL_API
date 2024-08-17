@@ -54,7 +54,7 @@ export const createContact = async () => {
                 console.log(`Data from file ${file}`); 
             }
 
-            for (let element of data) {
+            for (let element of data) {                
                 const gender = element.Gender === "M" ? "Male" : element.Gender === "F" ? "Female" : "";
                 const maritalStatus = element.MaritalStatus === "M" ? "Married" : element.MaritalStatus === "W" ? "Widow" : element.MaritalStatus === "S" ? "Single" : "";
 
@@ -132,6 +132,7 @@ export const createContact = async () => {
         }
 
         console.log("Contacts processed and files removed successfully");
+        return
     } catch (error) {
         console.error(`Error in creating contacts: ${error.message}`);
     }
